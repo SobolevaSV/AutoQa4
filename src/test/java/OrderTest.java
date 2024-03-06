@@ -38,10 +38,10 @@ public class OrderTest {
     @Test
     void shouldOrderCard() {
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Соболева Светлана");
-        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+12345678910");
+        driver.findElement(By.cssSelector("[data-test-id=phon] input")).sendKeys("+12345678910");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
         driver.findElement(By.cssSelector("button")).click();
         String text = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText();
-        assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
+        assertEquals("Ваша заявка отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
     }
 }
